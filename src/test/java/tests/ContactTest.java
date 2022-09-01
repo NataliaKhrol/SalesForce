@@ -20,7 +20,7 @@ public class ContactTest extends BaseTest{
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title='Sales Console']")));
         driver.findElement(By.cssSelector("[title=New]")).click();
 
-        new CreateContactPage(driver).create("Rak", "+375202658964");
+        new CreateContactPage(driver).create("Rak", "+375202658964", "Mrs.");
 
 
     }
