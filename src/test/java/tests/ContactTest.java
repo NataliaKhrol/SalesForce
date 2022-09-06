@@ -16,11 +16,12 @@ public class ContactTest extends BaseTest{
         driver.findElement(By.id("Login")).click();
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title=Setup]")));
-        driver.get("https://rutu2-dev-ed.lightning.force.com/lightning/page/home");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title='Sales Console']")));
-        driver.findElement(By.cssSelector("[title=New]")).click();
+        driver.get("https://rutu2-dev-ed.lightning.force.com/lightning/o/Contact/list?filterName=Recent");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Contacts' and @class='slds-var-p-right_x-small']")));
+       // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title='Sales Console']")));
+       driver.findElement(By.cssSelector("[title=New]")).click();
 
-        new CreateContactPage(driver).create("Rak", "+375202658964", "Mrs.");
+       new CreateContactPage(driver).create("Rak", "+375202658964", "Mrs.");
 
 
     }

@@ -10,7 +10,7 @@ public class BasePage {
     WebDriver driver;
     WebDriverWait wait;
 
-    public static final String BASE_URL = "https://www.saucedemo.com/";
+    public static final String BASE_URL = "https://rutu2-dev-ed.lightning.force.com/";
 
     BasePage(WebDriver driver) {
 
