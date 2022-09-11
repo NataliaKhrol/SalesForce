@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.CreateContactPage;
 import pages.CreateContactPage;
 
-public class ContactTest extends BaseTest{
+public class ContactTest extends BaseTest {
     @Test
     public void login() {
         loginPage.open();
@@ -15,13 +15,11 @@ public class ContactTest extends BaseTest{
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title=Setup]")));
 
-       createContactPage.open();
-       createContactPage.createNew();
+        createContactPage.open();
+        createContactPage.createNew();
 
-       new CreateContactPage(driver).create("Rak", "Alevtina", "Mrs.","+375202658964",
-               "+37517526985", "engineer", "Department of beauty","01/09/1979",
-               "Web", "Odoevskogo");
-
-        //создать LoginPage, создать страницу листа контактов
+        new CreateContactPage(driver).create("Rak", "Alevtina", "Mrs.", "+375202658964",
+                "+37517526985", "engineer", "Department of beauty", "01/09/1979",
+                "Web", "Odoevskogo");
     }
 }

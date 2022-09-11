@@ -19,12 +19,6 @@ public class BaseTest {
     LoginPage loginPage;
     CreateContactPage createContactPage;
     CreateAccountPage createAccountPage;
-   /*
-    ProductsPage productsPage;
-    CartPage cartPage;
-    CheckOutPage checkOutPage;
-    CheckOutCompletePage checkOutCompletePage;
-    CheckoutOverviewPage checkoutOverviewPage;*/
 
     @Parameters({"browser"})
     @BeforeMethod
@@ -40,7 +34,6 @@ public class BaseTest {
             //TODO implement firefox opening
         }
 
-
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -48,12 +41,6 @@ public class BaseTest {
         createContactPage = new CreateContactPage(driver);
         createAccountPage = new CreateAccountPage(driver);
 
-
-      /*  productsPage = new ProductsPage(driver);
-        checkOutPage = new CheckOutPage(driver);
-        checkOutCompletePage = new CheckOutCompletePage(driver);
-        checkoutOverviewPage = new CheckoutOverviewPage(driver);
-        cartPage = new CartPage(driver);*/
     }
 
     @AfterMethod(alwaysRun = true)

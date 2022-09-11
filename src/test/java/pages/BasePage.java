@@ -18,7 +18,6 @@ public class BasePage {
         wait = new WebDriverWait(driver, 20);
     }
 
-
         public boolean waitForVisibility(By locator) {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -28,6 +27,5 @@ public class BasePage {
         return true;
 
     }
-
 }
 

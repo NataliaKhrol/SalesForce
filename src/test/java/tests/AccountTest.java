@@ -19,8 +19,7 @@ public class AccountTest extends BaseTest{
        createAccountPage.createAccount();
 
        new CreateAccountPage(driver).create("Warm", "Bla", "+375202658964", "+3754896235",
-               "Mira", "Customer - Direct", "Victory ave");
+               "Mira", "Customer - Direct", "Victory ave", "Neapol");
 
-        //создать LoginPage, создать страницу листа контактов
     }
 }
