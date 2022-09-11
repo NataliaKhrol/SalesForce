@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
+import pages.CreateContactPage;
+import pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +15,9 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
 
     WebDriver driver;
-   /* LoginPage loginPage;
+    LoginPage loginPage;
+    CreateContactPage createContactPage;
+   /*
     ProductsPage productsPage;
     CartPage cartPage;
     CheckOutPage checkOutPage;
@@ -38,8 +42,10 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-     /*   loginPage = new LoginPage(driver);
-        productsPage = new ProductsPage(driver);
+        loginPage = new LoginPage(driver);
+        createContactPage = new CreateContactPage(driver);
+
+      /*  productsPage = new ProductsPage(driver);
         checkOutPage = new CheckOutPage(driver);
         checkOutCompletePage = new CheckOutCompletePage(driver);
         checkoutOverviewPage = new CheckoutOverviewPage(driver);

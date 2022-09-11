@@ -10,19 +10,18 @@ import pages.CreateContactPage;
 public class ContactTest extends BaseTest{
     @Test
     public void login() {
-        driver.get("https://rutu2-dev-ed.lightning.force.com/");
-        driver.findElement(By.id("username")).sendKeys("tashapas@sandbox.com");
-        driver.findElement(By.id("password")).sendKeys("marylandOC99");
-        driver.findElement(By.id("Login")).click();
+        loginPage.open();
+        loginPage.login("tashapas@sandbox.com", "marylandOC99");
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title=Setup]")));
-        driver.get("https://rutu2-dev-ed.lightning.force.com/lightning/o/Contact/list?filterName=Recent");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Contacts' and @class='slds-var-p-right_x-small']")));
-       // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title='Sales Console']")));
-       driver.findElement(By.cssSelector("[title=New]")).click();
 
-       new CreateContactPage(driver).create("Rak", "+375202658964", "Mrs.");
+       createContactPage.open();
+       createContactPage.createNew();
 
+       new CreateContactPage(driver).create("Rak", "Alevtina", "Mrs.","+375202658964",
+               "+37517526985", "engineer", "Department of beauty","01/09/1979",
+               "Web", "Odoevskogo");
 
+        //создать LoginPage, создать страницу листа контактов
     }
 }

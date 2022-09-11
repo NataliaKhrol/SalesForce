@@ -3,22 +3,21 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import tests.BaseTest;
 import wrappers.Dropdown;
 import wrappers.Input;
 import wrappers.TextArea;
 
-public class CreateContactPage extends BasePage {
+public class CreateAccountPage extends BasePage {
     private By NEW_BUTTON = By.cssSelector("[title=New]");;
 
-   public CreateContactPage(WebDriver driver) {
+   public CreateAccountPage(WebDriver driver) {
         super(driver);
     }
 
     public void open() {
-        driver.get(BASE_URL + "lightning/o/Contact/list?filterName=Recent");
+        driver.get(BASE_URL + "lightning/o/Account/list?filterName=Recent");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-                ("//span[text()='Contacts' and @class='slds-var-p-right_x-small']")));
+                ("//span[text()='Accounts' and @class='slds-context-bar__label-action slds-p-left--xx-small']")));
 
     }
     public void createNew(){
