@@ -17,18 +17,27 @@ public class CreateAccountPage extends BasePage {
     public void open() {
         driver.get(BASE_URL + "lightning/o/Account/list?filterName=Recent");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-                ("//span[text()='Accounts' and @class='slds-context-bar__label-action slds-p-left--xx-small']")));
+                ("//span[text()='Accounts' and @class='slds-var-p-right_x-small']")));
 
     }
-    public void createNew(){
+    public void createAccount(){
         driver.findElement(NEW_BUTTON).click();
     }
-    public void create(String lastName, String firstName, String salutation, String phone, String homePhone,
-                       String title, String department, String birthdate,  String leadSource, String mailingStreet) {
-        new Input("Last Name", driver).write(lastName);
-        new Input("First Name", driver).write(firstName);
-        new Dropdown("Salutation", driver).select(salutation);
+    public void create(String rating, String accountName, String phone, String fax, String accountNumber, String type, String billingStreet) {
+        new Dropdown("Rating", driver).select(rating);
+        new Input("Account Name", driver).write(accountName);
         new Input("Phone", driver).write(phone);
+        new Input("Fax", driver).write(phone);
+        new Input("Account Number", driver).write(phone);
+        new  Dropdown("Type", driver).select(type);
+        new TextArea("Billing Street", driver).write(billingStreet);
+
+        //   new Dropdown("Salutation", driver).select(salutation);
+
+
+    }
+}
+    /*    new Input("Phone", driver).write(phone);
         new Input("Home Phone", driver).write(homePhone);
       //  new Input("Home HomePhone", driver).write("524");
         new Input("Title", driver).write(title);
@@ -36,7 +45,5 @@ public class CreateAccountPage extends BasePage {
         new Input("Birthdate", driver).write(birthdate);
         new Dropdown("Lead Source", driver).select(leadSource);
         new TextArea("Mailing Street", driver).write(mailingStreet);
-
-
-    }
-}
+, String homePhone,
+        String title, String department, String birthdate,  String leadSource, String mailingStreet*/

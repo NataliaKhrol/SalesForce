@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
+import pages.CreateAccountPage;
 import pages.CreateContactPage;
 import pages.LoginPage;
 
@@ -17,6 +18,7 @@ public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
     CreateContactPage createContactPage;
+    CreateAccountPage createAccountPage;
    /*
     ProductsPage productsPage;
     CartPage cartPage;
@@ -44,6 +46,8 @@ public class BaseTest {
 
         loginPage = new LoginPage(driver);
         createContactPage = new CreateContactPage(driver);
+        createAccountPage = new CreateAccountPage(driver);
+
 
       /*  productsPage = new ProductsPage(driver);
         checkOutPage = new CheckOutPage(driver);
