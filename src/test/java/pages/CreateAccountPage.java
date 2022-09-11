@@ -8,7 +8,7 @@ import wrappers.Input;
 import wrappers.TextArea;
 
 public class CreateAccountPage extends BasePage {
-    private By NEW_BUTTON = By.cssSelector("[title=New]");;
+    private By NEW_BUTTON = By.cssSelector("[title=New]");
 
    public CreateAccountPage(WebDriver driver) {
         super(driver);
