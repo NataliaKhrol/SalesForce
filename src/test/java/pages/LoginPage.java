@@ -9,6 +9,7 @@ public class LoginPage extends BasePage {
     private By USERNAME_INPUT = By.id("username");
     private By PASSWORD_INPUT = By.id("password");
     private By LOGIN_BUTTON = By.id("Login");
+    private By SETUP_BUTTON = By.cssSelector("[title=Setup]");
 
 
     public LoginPage(WebDriver driver) {
@@ -23,6 +24,8 @@ public class LoginPage extends BasePage {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         driver.findElement(PASSWORD_INPUT).sendKeys(passwsord);
         driver.findElement(LOGIN_BUTTON).click();
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(SETUP_BUTTON));
 
     }
 }

@@ -12,8 +12,7 @@ public class ContactTest extends BaseTest {
     public void login() {
         loginPage.open();
         loginPage.login("tashapas@sandbox.com", "marylandOC99");
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title=Setup]")));
+
 
         createContactPage.open();
         createContactPage.createNew();
