@@ -12,8 +12,6 @@ public class ContactTest extends BaseTest {
     public void login() {
         loginPage.open();
         loginPage.login("tashapas@sandbox.com", "marylandOC99");
-
-
         createContactPage.open();
         createContactPage.createNew();
 
