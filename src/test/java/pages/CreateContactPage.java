@@ -3,10 +3,13 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import tests.BaseTest;
 import wrappers.Dropdown;
 import wrappers.Input;
 import wrappers.TextArea;
+
+import java.time.Duration;
 
 public class CreateContactPage extends BasePage {
     private By NEW_BUTTON = By.cssSelector("[title=New]");
@@ -18,8 +21,8 @@ public class CreateContactPage extends BasePage {
 
     public void open() {
         driver.get(BASE_URL + "lightning/o/Contact/list?filterName=Recent");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
-                ("//span[text()='Contacts' and @class='slds-var-p-right_x-small']")));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Contacts' and @class='slds-truncate']")));
     }
 
     public void createNew() {

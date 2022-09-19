@@ -7,12 +7,14 @@ import org.testng.annotations.Test;
 import pages.CreateAccountPage;
 import pages.CreateContactPage;
 
+import java.time.Duration;
+
 public class AccountTest extends BaseTest{
     @Test
     public void login() {
         loginPage.open();
         loginPage.login("tashapas@sandbox.com", "marylandOC99");
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title=Setup]")));
 
        createAccountPage.open();
