@@ -12,7 +12,7 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
         System.out.println(String.format("======================================== STARTING TEST %s ========================================", iTestResult.getName()));
-        WebDriver driver = (WebDriver) iTestResult.getTestContext().getAttribute("driver");
+        WebDriver driver = (WebDriver)iTestResult.getTestContext().getAttribute("driver");
         if (driver != null) {
             AllureUtils.takeScreenshot(driver);
         }
@@ -22,7 +22,7 @@ public class TestListener implements ITestListener {
     public void onTestSuccess(ITestResult iTestResult) {
         System.out.println(String.format("======================================== FINISHED TEST %s Duration: %ss ========================================", iTestResult.getName(),
                 getExecutionTime(iTestResult)));
-        WebDriver driver = (WebDriver) iTestResult.getTestContext().getAttribute("driver");
+        WebDriver driver = (WebDriver)iTestResult.getTestContext().getAttribute("driver");
         if (driver != null) {
             AllureUtils.takeScreenshot(driver);
         }
@@ -32,7 +32,7 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         System.out.println(String.format("======================================== FAILED TEST %s Duration: %ss ========================================", iTestResult.getName(),
                 getExecutionTime(iTestResult)));
-        WebDriver driver = (WebDriver) iTestResult.getTestContext().getAttribute("driver");
+        WebDriver driver = (WebDriver)iTestResult.getTestContext().getAttribute("driver");
         if (driver != null) {
             AllureUtils.takeScreenshot(driver);
         }
@@ -41,7 +41,7 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
         System.out.println(String.format("======================================== SKIPPING TEST %s ========================================", iTestResult.getName()));
-        WebDriver driver = (WebDriver) iTestResult.getTestContext().getAttribute("driver");
+        WebDriver driver = (WebDriver)iTestResult.getTestContext().getAttribute("driver");
         if (driver != null) {
             AllureUtils.takeScreenshot(driver);
         }

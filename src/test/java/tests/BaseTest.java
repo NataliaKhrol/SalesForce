@@ -33,7 +33,8 @@ public class BaseTest {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
             //TODO implement firefox opening
-        } testContext.setAttribute("driver", driver);
+        }
+        testContext.setAttribute("driver", driver);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

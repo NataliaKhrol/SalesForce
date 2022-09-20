@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,6 +15,7 @@ public class CreateAccountPage extends BasePage {
         super(driver);
     }
 
+    @Step("Open new page '{Account}'")
     public void open() {
         driver.get(BASE_URL + "lightning/o/Account/list?filterName=Recent");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
@@ -21,6 +23,7 @@ public class CreateAccountPage extends BasePage {
         driver.findElement(By.cssSelector("[title='Accounts']")).click();
     }
 
+    @Step("Create new Contact by filling lots of personal data")
     public void createAccount(){
         driver.findElement(NEW_BUTTON).click();
     }
