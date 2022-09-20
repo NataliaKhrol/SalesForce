@@ -1,5 +1,6 @@
 package tests;
 
+import dto.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,7 +16,8 @@ public class ContactTest extends BaseTest {
         createContactPage.open();
         createContactPage.createNew();
 
-        new CreateContactPage(driver).create("Rak", "Alevtina", "Mrs.", "+375202658964",
+        Contact contact = new Contact("Rak", "+375202658964", "Mrs.", "Alevtina");
+        new CreateContactPage(driver).create("Mrs.", "+375202658964",
                 "+37517526985", "engineer", "Department of beauty", "01/09/1979",
                 "Web", "Odoevskogo");
     }

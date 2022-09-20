@@ -1,5 +1,6 @@
 package pages;
 
+import dto.Contact;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,12 +34,11 @@ public class CreateContactPage extends BasePage {
     }
 
     @Step("Create new Contact by filling lots of personal data")
-    public void create(String lastName, String firstName, String salutation, String phone, String homePhone,
-                       String title, String department, String birthdate, String leadSource, String mailingStreet) {
-        new Input("Last Name", driver).write(lastName);
+    public void create(Contact contact) {
+        new Input("Last Name", driver).write(contact.getLastName());
         new Input("First Name", driver).write(firstName);
-        new Dropdown("Salutation", driver).select(salutation);
-        new Input("Phone", driver).write(phone);
+        new Dropdown("Salutation", driver).select(contact.getSalutation());
+        new Input("Phone", driver).write(contact.getPhone());
         new Input("Home Phone", driver).write(homePhone);
         //  new Input("Home HomePhone", driver).write("524");
         new Input("Title", driver).write(title);
