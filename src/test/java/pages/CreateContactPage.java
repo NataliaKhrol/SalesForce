@@ -36,9 +36,43 @@ public class CreateContactPage extends BasePage {
     @Step("Create new Contact by filling lots of personal data")
     public void create(Contact contact) {
         new Input("Last Name", driver).write(contact.getLastName());
-        new Input("First Name", driver).write(firstName);
+        new Input("First Name", driver).write(contact.getFirstName());
         new Dropdown("Salutation", driver).select(contact.getSalutation());
         new Input("Phone", driver).write(contact.getPhone());
+        new Input("Home Phone", driver).write(contact.getHomePhone());
+        //  new Input("Home HomePhone", driver).write("524");
+        new Input("Title", driver).write(contact.getTitle());
+        new Input("Department", driver).write(contact.getDepartment());
+        new Input("Birthdate", driver).write(contact.getBirthdate());
+        new Dropdown("Lead Source", driver).select(contact.getLeadSource());
+        new TextArea("Mailing Street", driver).write(contact.getMailingStreet());
+    }
+}
+/*
+public class CreateContactPage extends BasePage {
+    private By NEW_BUTTON = By.cssSelector("[title=New]");
+    ;
+
+    public CreateContactPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void open() {
+        driver.get(BASE_URL + "lightning/o/Contact/list?filterName=Recent");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Contacts' and @class='slds-context-bar__label-action slds-p-left--xx-small']")));
+    }
+
+    public void createNew() {
+        driver.findElement(NEW_BUTTON).click();
+    }
+
+    public void create(String lastName, String firstName, String salutation, String phone, String homePhone,
+                       String title, String department, String birthdate, String leadSource, String mailingStreet) {
+        new Input("Last Name", driver).write(lastName);
+        new Input("First Name", driver).write(firstName);
+        new Dropdown("Salutation", driver).select(salutation);
+        new Input("Phone", driver).write(phone);
         new Input("Home Phone", driver).write(homePhone);
         //  new Input("Home HomePhone", driver).write("524");
         new Input("Title", driver).write(title);
@@ -48,3 +82,4 @@ public class CreateContactPage extends BasePage {
         new TextArea("Mailing Street", driver).write(mailingStreet);
     }
 }
+ */

@@ -16,9 +16,24 @@ public class ContactTest extends BaseTest {
         createContactPage.open();
         createContactPage.createNew();
 
-        Contact contact = new Contact("Rak", "+375202658964", "Mrs.", "Alevtina");
-        new CreateContactPage(driver).create("Mrs.", "+375202658964",
-                "+37517526985", "engineer", "Department of beauty", "01/09/1979",
-                "Web", "Odoevskogo");
+        Contact contact = new Contact("Rak", "+375202658964", "Mrs.", "Alevtina", "+37517526985",
+                "engineer", "Department of beauty", "01/09/1979", "Web", "Odoevskogo");
+
+
     }
 }
+/*
+public class ContactTest extends BaseTest {
+    @Test
+    public void login() {
+        loginPage.open();
+        loginPage.login("tashapas@sandbox.com", "marylandOC99");
+        createContactPage.open();
+        createContactPage.createNew();
+
+
+        new CreateContactPage(driver).create("Rak", "+375202658964", "Mrs.", "Alevtina", "+37517526985
+                , "engineer", "Department of beauty", "01/09/1979",
+                "Web", "Odoevskogo");
+    }
+ */
