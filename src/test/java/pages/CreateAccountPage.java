@@ -1,12 +1,16 @@
 package pages;
 
 import io.qameta.allure.Step;
+import lombok.Data;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import wrappers.Dropdown;
 import wrappers.Input;
 import wrappers.TextArea;
+
+@Log4j2
 
 public class CreateAccountPage extends BasePage {
     private By NEW_BUTTON = By.cssSelector("[title=New]");
@@ -29,6 +33,7 @@ public class CreateAccountPage extends BasePage {
     }
     public void create(String rating, String accountName, String phone, String fax, String accountNumber, String type,
                        String billingStreet, String shippingStreet) {
+       log.info("Creating account: '{}'", accountName);
         new Dropdown("Rating", driver).select(rating);
         new Input("Account Name", driver).write(accountName);
         new Input("Phone", driver).write(phone);
