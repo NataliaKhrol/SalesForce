@@ -2,6 +2,8 @@ package pages;
 
 import dto.Contact;
 import io.qameta.allure.Step;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +14,7 @@ import wrappers.Input;
 import wrappers.TextArea;
 
 import java.time.Duration;
+
 
 public class CreateContactPage extends BasePage {
     private By NEW_BUTTON = By.cssSelector("[title=New]");
