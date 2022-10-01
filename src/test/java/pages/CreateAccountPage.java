@@ -31,6 +31,7 @@ public class CreateAccountPage extends BasePage {
     public void createAccount(){
         driver.findElement(NEW_BUTTON).click();
     }
+
     public void create(String rating, String accountName, String phone, String fax, String accountNumber, String type,
                        String billingStreet, String shippingStreet) {
        log.info("Creating account: '{}'", accountName);

@@ -2,14 +2,11 @@ package pages;
 
 import dto.Contact;
 import io.qameta.allure.Step;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import tests.BaseTest;
 import wrappers.Dropdown;
 import wrappers.Input;
 import wrappers.TextArea;
@@ -39,7 +36,7 @@ public class CreateContactPage extends BasePage {
 
     @Step("Create new Contact by filling lots of personal data")
     public void create(Contact contact) {
-        log.info("Creating account '{}'", contact);
+        log.info("Creating contact '{}'", contact);
         new Input("Last Name", driver).write(contact.getLastName());
         new Input("First Name", driver).write(contact.getFirstName());
         new Dropdown("Salutation", driver).select(contact.getSalutation());
