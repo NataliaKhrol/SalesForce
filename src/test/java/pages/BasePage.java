@@ -26,11 +26,11 @@ public class BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-        public boolean waitForVisibility(By locator) {
+    public boolean waitForVisibility(By locator) {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         } catch (TimeoutException ex) {
-            log.error("Element {} is not visible" , locator);
+            log.error("Element {} is not visible", locator);
             return false;
         }
         return true;
